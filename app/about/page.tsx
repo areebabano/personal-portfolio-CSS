@@ -14,7 +14,6 @@ export default function About() {
   return (
     <div className='about-container'>
       <div className="mb-20">
-        <Header />
       </div>
       <main className='main'>
         <section>
@@ -75,7 +74,6 @@ export default function About() {
           </div>
         </section>
       </main>
-      <Footer />
     </div>
   );
 }

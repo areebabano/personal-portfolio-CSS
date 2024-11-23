@@ -5,7 +5,6 @@ import Footer from "./components/footer";
 export default function Home() {
   return (
     <div className="bg-black text-white">
-      <Header />
       <main className="main-container">
         <section className="hero">
           <div className="hero-content">
@@ -33,7 +32,6 @@ export default function Home() {
           </div>
         </section>
       </main>
-      <Footer />
     </div>
   );
 }
