@@ -1,0 +1,783 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* styles/Header.css */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "CustomFont", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  color: white;
+}
+
+header {
+  background-color: black;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+}
+
+.container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 80px; /* Adjusted height */
+  padding: 0 20px; /* Add padding for better spacing */
+}
+
+.container .logo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.container .logo img {
+  object-fit: cover; /* Ensures the image fits properly */
+}
+
+
+/* styles/Navbar.css */
+
+.navbar {
+  width: 100%;
+}
+
+.navbar nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 32px; /* Space between links */
+  padding: 10px 20px;
+}
+
+.navbar-link {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+}
+
+.navbar-link img {
+  display: block;
+  object-fit: cover; /* Ensures the image fits properly */
+}
+
+.navbar-link span {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 55px; /* Adjust tooltip position */
+  font-size: 0.9rem;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.navbar-link:hover span {
+  opacity: 1;
+}
+
+/* Global Styles */
+
+
+/* Hero Section */
+.hero {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 120px auto; /* Centers the content with space for the header */
+  padding: 20px;
+}
+
+.hero-content {
+  flex: 2; /* Ensures content takes up equal space */
+  margin-left: 25px;
+  text-align: left; /* Aligns text to the left */
+  margin-right: 60px; /* Adds spacing between text and image */
+}
+
+.hero-content h2 {
+  font-size: 2rem;
+  color: darkgoldenrod;
+  font-style: italic;
+  margin-bottom: 2px;
+  animation: color-change 4s infinite alternate;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes color-change {
+  0% { color: darkgoldenrod; } /* Initial color */
+  50% { color:white; } /* Color during mid-animation */
+  100% { color: darkgoldenrod; } /* Final color */
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: 900;
+  margin-top: 5px;
+  color: darkgoldenrod;
+  animation: color-change 4s infinite alternate;
+  font-family:'Gill Sans'; 
+  overflow: hidden; /* Ensures the animation hides the text initially */
+  white-space: nowrap; /* Keeps the text on a single line */
+  /* border-right: .15em solid darkgoldenrod; Creates a cursor effect */
+  animation: typing 4s steps(30, end), color-change 4s infinite alternate, blink-caret .75s step-end infinite;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-content p {
+  font-size: 1.125rem; /* Adjust as needed */
+  line-height: 1.6; /* Increase line height for readability */
+  margin-top: 1.5rem; /* Adjust spacing from the heading */
+  padding: 1rem; /* Add padding for better text spacing */
+  background-color: rgba(255, 255, 255, 0.1); 
+  border-radius: 8px; /* Rounded corners for a softer look */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  font-family: 'Roboto', sans-serif; /* Example font, use a web font of your choice */
+  font-weight: 400;
+  border: 2px solid yellow;
+  animation: fade-in 4s;
+  font-style: italic; 
+}
+
+.hero-content:hover p {
+  background-color: black; /* Background color on hover */
+  color: white; /* Text color on hover */
+  border-color: yellow; /* Border color on hover */
+  filter:drop-shadow(5px 7px 5px orange);
+}
+
+.hero-image {
+  flex: 1; /* Ensures image takes up equal space */
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image img {
+  border-radius: 50%;
+  box-shadow: 0px 5px 10px rgba(255, 165, 0, 0.5);
+}
+
+.image-style{
+  filter:drop-shadow(5px 7px 5px orange);
+}
+
+/* Footer Styles */
+.footerStyle {
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+  transition: background-color 0.3s ease;
+  width: 100%; /* Ensures full-width footer */
+}
+
+.footerStyle:hover {
+  background-color: darkgoldenrod; /* Entire footer background changes */
+}
+
+.footerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.navLinks {
+  display: flex;
+  gap: 35px;
+  justify-content: center;
+}
+
+.link {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.link:hover {
+  color: darkgoldenrod;
+}
+
+.imageContainer {
+  margin: 15px 0;
+}
+
+.profileImage {
+  border-radius: 50%;
+  box-shadow: 0px 5px 10px rgba(255, 165, 0, 0.5);
+  filter:drop-shadow(5px 7px 5px orange);
+}
+
+.profileImage {
+  filter:drop-shadow(5px 7px 5px black);
+}
+
+.connectTitle {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.socialLink {
+  transition: transform 0.3s ease;
+}
+
+.socialLink:hover {
+  transform: scale(1.1);
+}
+
+.copyright {
+  margin-top: 15px;
+  font-size: 14px;
+  text-align: center;
+  font-style: italic;
+}
+
+/* Bounce Animation for "Connect with me" */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+.connectTitle {
+  margin-top: 10px;
+  font-size: 18px;
+  animation: bounce 2s infinite; /* Apply bounce animation */
+}
+
+/* Pulse Animation for Social Links */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(255, 255, 255, 0.5);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.8); /* Add glowing effect */
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(255, 255, 255, 0.5);
+  }
+}
+
+.socialLink {
+  transition: transform 0.3s ease;
+  animation: pulse 1.5s infinite; /* Apply pulse animation */
+}
+
+/* General styling for the page */
+.about-container {
+  background-color: black;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Styling for the main content area */
+.main {
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+/* Profile image styling */
+.profile-image {
+  border-radius: 50%;
+  object-fit: cover;
+  animation: pulse 1.5s infinite ease-in-out;
+  transition: transform 0.3s ease;
+  box-shadow: 0px 5px 10px rgba(255, 165, 0, 0.5);
+  filter:drop-shadow(5px 7px 5px orange);
+}
+.profile-image:hover {
+  transform: scale(1.05);
+  
+}
+
+/* Heading styling */
+.about-heading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  font-family: serif;
+  margin-bottom: 1.5rem;
+  color: darkgoldenrod;
+  animation: color-change 4s infinite alternate;
+  transition: color 0.3s;
+}
+
+.about-heading:hover {
+  color: darkgoldenrod;
+}
+
+/* Parent container to center the paragraph */
+.center-container {
+  display: flex; /* Enable flexbox */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  flex-direction: column; /* Stack items vertically */
+  min-height: 100vh; /* Full viewport height */
+}
+
+/* Paragraph styling */
+.about-paragraph {
+  padding: 20px; /* Padding for better readability */
+  border-radius: 8px; /* Rounded corners */
+  margin-bottom: 1.5rem; /* Space below the paragraph */
+  line-height: 1.75; /* Better line spacing */
+  font-size: 18px; /* Font size */
+  font-style: italic; /* Italic font style */
+  background-color: darkgoldenrod; /* Initial background color */
+  border: 2px solid yellow; /* Border color */
+  color: white; /* Text color */
+  max-width: 70%; /* Limit paragraph width */
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Smooth transitions */
+  text-align: center; /* Center text inside the paragraph */
+}
+
+/* Hover effect */
+.about-paragraph:hover {
+  background-color: black; /* Change background on hover */
+  color: darkgoldenrod; /* Change text color on hover */
+  border-color: yellow; /* Maintain border color */
+  filter: drop-shadow(5px 7px 5px orange); /* Shadow effect */
+}
+
+/* AOS animation styles */
+[data-aos="fade-up"] {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+[data-aos="fade-up"].aos-animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* Keyframes for animation */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+}
+
+/* Container Styles */
+.project-card {
+  width: 20rem;
+  height: 20rem;
+  perspective: 1000px;
+  margin: 1rem;
+  position: relative;
+}
+
+/* Card Container Styles */
+.card-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease-in-out;
+}
+
+.card-container.flipped {
+  transform: rotateY(180deg);
+}
+
+/* Front Side */
+.card-front {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  background: #ffffff;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: border-color 0.3s;
+}
+
+.card-front:hover {
+  border-color: #ffc107; /* Highlight on hover */
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Back Side */
+.card-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+  background: #000000;
+  color: #ffffff;
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.card-description {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.card-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.card-links a {
+  color: #ffffff;
+  transition: color 0.3s;
+}
+
+.card-links a:hover {
+  color: #ffc107;
+}
+
+/* Visibility Classes */
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* General styles */
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  color: #fff;
+}
+
+/* Container styles */
+.projects-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header-container {
+  margin-bottom: 20px;
+  margin-top: 60px;
+}
+
+.projects-main {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+.projects-title {
+  text-align: center;
+  font-size: 2.3rem;
+  font-family: serif;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: darkgoldenrod;
+  animation: color-change 4s infinite alternate;
+  transition: color 0.3s;
+}
+
+.paragraph {
+  text-align: center;
+  margin: 0 auto 30px;
+  max-width: 750px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  padding: 20px;
+  border: 1px solid #444;
+  background-color: darkgoldenrod;
+  border-radius: 10px;
+  transition: background-color 0.3s, color 0.3s;
+  animation: fade-in 4s;
+}
+
+.paragraph:hover {
+  background-color: #000;
+  color: darkgoldenrod;
+}
+
+/* Grid styles */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+
+
+/* ProjectCard-specific styles */
+.card-container {
+  position: relative;
+  perspective: 1000px;
+  width: 100%;
+  height: 320px;
+  transition: transform 0.5s ease;
+  box-shadow: 0 8px 16px orange; /* Added box shadow */
+  border-radius: 10px; /* Smooth corners */
+}
+
+.card-container:hover {
+  transform: rotateY(180deg);
+  box-shadow: 0 10px 20px orange; /* Enhanced shadow on hover */
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.card-front {
+  background-color: white;
+  box-shadow: 0 4px 8px orange; /* Box shadow for the front face */
+}
+
+.card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px; /* Ensures image respects card's border radius */
+}
+
+.card-back {
+  background-color: black;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: rotateY(180deg);
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Box shadow for the back face */
+}
+
+.card-back h3 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.card-back p {
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.card-back a {
+  margin: 0 10px;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.card-back a:hover {
+  color: darkgoldenrod;
+}
+
+.contact-container {
+  max-width: 950px;
+  margin: 4rem auto 2rem; /* Add margin at the top */
+  padding: 2rem;
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: left; /* Align content to the left */
+  margin-left: 100px;
+}
+
+.contact-heading {
+  font-family: serif;
+  font-weight: 600;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  animation: color-change 4s infinite alternate;
+}
+
+.contact-paragraph {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+.contactInfo {
+  margin-bottom: 2rem;
+}
+
+.contactInfo p{
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.contactInfo h2 {
+  font-size: 2rem;
+  margin-bottom: 0.8rem;
+  font-family: serif;
+  font-weight: 600;
+  animation: color-change 4s infinite alternate;
+}
+
+.iconLinks {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.iconLinks {
+  color: white;
+}
+
+ .fb:hover {
+  color: rgb(27, 43, 135);
+}
+
+.li:hover {
+  color: rgb(21, 79, 185);
+}
+
+.yt:hover {
+  color: red;
+}
+
+.ig:hover {
+  color: rgb(206, 15, 114);
+}
+
+.form-section h2 {
+  font-size: 2rem;
+  margin-bottom: 0.8rem;
+  font-family: serif;
+  font-weight: 600;
+  animation: color-change 4s infinite alternate;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.formGroup label {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.formInput,
+.formTextarea {
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: 1px solid darkgoldenrod;
+  border-radius: 5px;
+  background-color: black;
+}
+
+.formInput:focus,
+.formTextarea:focus {
+  outline: none;
+  border-color: #ffa500;
+}
+
+.formButton {
+  padding: 0.8rem;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: black;
+  color: white;
+  border: 1px solid darkgoldenrod; /* Added border */
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.formButton:hover {
+  background-color: darkgoldenrod;
+  border-color: #ffa500; /* Change border color on hover */
+}
+
+.messageSuccess {
+  color: #4caf50;
+  font-size: 1rem;
+}
+
+.messageError {
+  color: #f44336;
+  font-size: 1rem;
+}
